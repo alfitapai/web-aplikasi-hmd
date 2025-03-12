@@ -31,9 +31,19 @@ class regisdanloginController extends Controller
             $errorMessages = $valid->errors()->all();
             return redirect()->back()
                 ->withErrors($valid)
-                ->withInput();
-            // ->with('error','Validasi Gagal');
-        }
+                ->withInput()
+                ->with('error', 'Validasi Gagal');
+            // return dd($request->all());
+        };
+
+        $pwd = $request->password;
+        $pwdCnf = $request->conf_passwd;
+        if ($pwd != $pwdCnf) {
+            return redirect()->back()
+                ->withInput()
+                ->with(['type' => 'error', 'title' => 'kesalahan', 'message' => 'password tidak sama']);
+        };
+
 
         try {
             $userBaru = User::create([

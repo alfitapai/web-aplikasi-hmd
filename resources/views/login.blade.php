@@ -70,7 +70,11 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- JavaScript -->
 
     <!-- Separate Popper and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <script src="{{ asset('assets/js/script/ajaxsetup.js') }}"></script>
+
   </body>
 </html>
