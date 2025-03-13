@@ -1,14 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Features</a>
-        <a class="nav-item nav-link" href="#">Pricing</a>
-        <a class="nav-item nav-link disabled" href="#">Disabled</a>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    {{-- <button class="btn btn-outline-primary" type="button" onclick="toggleSidebar()">
+        ☰
+    </button> --}}
+    {{-- <a href="#" class="navbar-brand ml-3">App</a> --}}
+    <img src="{{ asset('assets/img/logo-example.png') }}" alt="brand" class="navbar-brand" width="100px">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            {{-- <li class="nav-item active"> --}}
+            <li class="nav-item {{ Request::routeIs('home')? 'active': '' }}">
+                <a href="{{ route('home') }}" class="nav-link">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Penjualan</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Stok</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Absensi</a>
+            </li>
+        </ul>
     </div>
-  </nav>
+</nav>

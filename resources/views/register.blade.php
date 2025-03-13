@@ -36,11 +36,11 @@ The above copyright notice and this permission notice shall be included in all c
             @csrf
             <div class="input-group uf-input-group input-group-lg mb-3">
                 <span class="input-group-text fa fa-user"></span>
-                <input type="text" name="userid" class="form-control" placeholder="user Id" id="userId">
+                <input type="text" name="userid" class="form-control" placeholder="user Id" id="userId" value="{{ old('userid') }}">
             </div>
             <div class="input-group uf-input-group input-group-lg mb-3">
                 <span class="input-group-text fa fa-envelope"></span>
-                <input type="text" name="email" class="form-control" placeholder="Email address" id="email">
+                <input type="text" name="email" class="form-control" placeholder="Email address" id="email" value="{{ old('email') }}">
             </div>
             {{-- <div class="input-group uf-input-group input-group-lg mb-3">
                 <span class="input-group-text fa fa-phone"></span>
@@ -75,7 +75,17 @@ The above copyright notice and this permission notice shall be included in all c
     <script src="{{ asset('assets/js/script/ajaxsetup.js') }}"></script>
     <script src="{{ asset('assets/script/loginregister/register.js') }}"></script>
     <script src="{{ asset('assets/script/toast.js') }}"></script>
+    @if (session('type')&& session('title')&& session ('text'))
     <script>
+        Swal.fire({
+            title: '{{ session('title') }}',
+            html: '{!!  session('text') !!}',
+            icon: '{{ session('type') }}',
+            confirmButtonText: 'OKE'
+        });
+    </script>
+    @endif
+    {{-- <script>
         $(document).ready(function() {
             var type = '{{ session('type') }}';
             var title = '{{ session('title') }}';
@@ -93,7 +103,7 @@ The above copyright notice and this permission notice shall be included in all c
                 });
             }
         });
-    </script>
+    </script> --}}
 </body>
 
 </html>

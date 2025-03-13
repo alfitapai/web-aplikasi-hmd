@@ -14,7 +14,7 @@ Route::get('/register', function () {
 
 Route::get('/home', function () {
     return view('page.home');
-});
+})->name('home');
 
 Route::get('/debug-log', function () {
     Log::error('Manual log test!');

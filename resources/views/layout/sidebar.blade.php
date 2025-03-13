@@ -1,54 +1,83 @@
-
+{{--
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Sidebar</span>
+    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <span class="fs-4">Nama Aplikasi / Nama Instansi</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+        <a href="{{ route('home') }}" class=" {{ Request::routeIs('home')? 'nav-link active' :'nav-link link-dark' }} ">
+            <i class="fa-solid fa-gauge me-2"></i>
           Dashboard
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Orders
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          Products
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Customers
-        </a>
-      </li>
+
     </ul>
     <hr>
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>mdo</strong>
+        <img src="{{ asset('assets/img/user.png') }}" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>{{ Auth::user()->userid }}</strong>
       </a>
       <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Profile (Coming Soon)</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <li><a class="dropdown-item" href="{{ route('proslogout') }}">Sign out</a></li>
       </ul>
+    </div>
+  </div> --}}
+
+<style>
+    .nav{
+        margin-top: 100px;
+    }
+</style>
+  <div class="sidebare" id="sidebare">
+    {{-- <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <span class="fs-4">Nama Aplikasi / Nama Instansi</span>
+      </a>
+      <hr> --}}
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="{{ route('home') }}" class="{{ Request::routeIs('home')? 'nav-link active' :'nav-link link-dark' }}">  <i class="fa-solid fa-gauge me-2"></i>Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link link-dark">  <i class="fa-solid fa-circle-dollar-to-slot me-2"></i>Penjualan</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link link-dark">  <i class="fa-solid fa-warehouse me-2"></i>Stok</a>
+        </li>
+        <hr>
+        <li class="nav-item">
+            <a href="#" class="nav-link link-dark">  <i class="fa-solid fa-users-rectangle me-2"></i>Absensi</a>
+        </li>
+    </ul>
+    <hr>
+    <div class="punyauser">
+        <ul class="nav flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="btn btn-outline-secondary nav-link link-dark mb-1"><strong>Profil (Coming Soon)</strong></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('proslogout') }}" class="btn btn-outline-secondary nav-link link-dark mb-1"><strong>Logout</strong></a>
+            </li>
+        </ul>
+        <hr>
+        <div class="isiuser">
+            <img src="{{ asset('assets/img/user.png') }}" width="32" height="32" class="rounded-circle me-2" >
+            <strong>{{ Auth::user()->userid }}</strong>
+        </div>
+        {{-- <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{ asset('assets/img/user.png') }}" width="32" height="32" class="rounded-circle me-2" >
+                <strong>{{ Auth::user()->userid }}</strong>
+            </a>
+            <ul class="dropdown-menu text-small shadow menu-user" aria-labelledby="dropdownUser" >
+                <li><a href="#" class="dropdown-item">Profil (Coming Soon)</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a href="{{ route('proslogout') }}" class="dropdown-item">Keluar</a></li>
+            </ul>
+        </div> --}}
+
     </div>
   </div>

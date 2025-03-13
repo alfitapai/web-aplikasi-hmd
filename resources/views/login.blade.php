@@ -31,19 +31,20 @@ The above copyright notice and this permission notice shall be included in all c
         <a href="/"><img src="{{ asset('assets/img/logo-fb.png') }}" alt="" width="100" height="100"></a>
       <h1 class="text-white h3">Account Login</h1>
       </div>
-      <form class="mt-4">
+      <form class="mt-4" action="{{ route('proslogin') }}" method="POST">
+        @csrf
         <div class="input-group uf-input-group input-group-lg mb-3">
           <span class="input-group-text fa fa-user"></span>
-          <input type="text" class="form-control" placeholder="Username or Email address">
+          <input type="text" class="form-control" placeholder="Username or Email address" name="emailuser" value="{{ old('emailuser') }}">
         </div>
         <div class="input-group uf-input-group input-group-lg mb-3">
           <span class="input-group-text fa fa-lock"></span>
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="password">
         </div>
         <div class="d-flex mb-3 justify-content-between">
           <div class="form-check">
-            <input type="checkbox" class="form-check-input uf-form-check-input" id="exampleCheck1">
-            <label class="form-check-label text-white" for="exampleCheck1">Remember Me</label>
+            <input type="checkbox" class="form-check-input uf-form-check-input" name="ingat" id="exampleCheck1">
+            <label class="form-check-label text-white" for="exampleCheck1"  >Remember Me</label>
           </div>
           <a href="#">Forgot password?</a>
         </div>
@@ -75,6 +76,17 @@ The above copyright notice and this permission notice shall be included in all c
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
     <script src="{{ asset('assets/js/script/ajaxsetup.js') }}"></script>
+    <script src="{{ asset('assets/script/toast.js') }}"></script>
+    @if (session('type') && session('title') && session('text'))
+    <script>
+        Swal.fire({
+            title: '{{ session('title') }}',
+            html: '{!! session('text') !!}',
+            icon: '{{ session('type') }}',
+            confirmButtonText: 'OK'
+        });
+    </script>
+@endif
 
   </body>
 </html>
