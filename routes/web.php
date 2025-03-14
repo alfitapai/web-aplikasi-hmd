@@ -28,6 +28,10 @@ Route::get('/penjualan', function () {
     return view('page.penjualan.penjualan', ['pengawas' => $pengawas, 'shift' => $shift]);
 })->name('lamanpenjualan');
 
+Route::get('/absen', function () {
+    return view('page.absensi.absen');
+})->name('absen');
+
 Route::get('/user/setting', function () {
     return view('page.settings.pengaturan');
 })->name('setting');

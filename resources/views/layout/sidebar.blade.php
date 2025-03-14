@@ -49,14 +49,20 @@
                     class="fa-solid fa-circle-dollar-to-slot me-2"></i>Penjualan</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('stok') }}" class="{{ Request::routeIs('stok') ? 'nav-link active' : 'nav-link link-dark'}}"> <i class="fa-solid fa-warehouse me-2"></i>Stok</a>
+            <a href="{{ route('stok') }}"
+                class="{{ Request::routeIs('stok') ? 'nav-link active' : 'nav-link link-dark' }}"> <i
+                    class="fa-solid fa-warehouse me-2"></i>Stok</a>
         </li>
-        <li class="nav-item">
-            <a href="{{ route('stok') }}" class="{{ Request::routeIs('stok') ? 'nav-link active' : 'nav-link link-dark'}}"> <i class="fa-solid fa-warehouse me-2"></i>Daftar Karyawan</a>
-        </li>
+        {{-- <li class="nav-item">
+            <a href="{{ route('absen') }}"
+                class="{{ Request::routeIs('absen') ? 'nav-link active' : 'nav-link link-dark' }}"> <i
+                    class="fa-solid fa-warehouse me-2"></i>Daftar Karyawan</a>
+        </li> --}}
         <hr>
         <li class="nav-item">
-            <a href="#" class="nav-link link-dark"> <i class="fa-solid fa-users-rectangle me-2"></i>Absensi</a>
+            <a href="{{ route('absen') }}"
+                class="{{ Request::routeIs('absen') ? 'nav-link active' : 'nav-link link-dark' }}"> <i
+                    class="fa-solid fa-users-rectangle me-2"></i>Daftar Karyawan</a>
         </li>
     </ul>
     <hr>

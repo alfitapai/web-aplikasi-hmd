@@ -2,7 +2,7 @@
 @section('title', 'absen')
 @section('absen')
     <div class="container-fluid p-2">
-
+        
     </div>
 @endsection
 @section('sabsen')
