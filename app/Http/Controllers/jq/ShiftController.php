@@ -49,7 +49,15 @@ class ShiftController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'urutan'=>'required',
+            'jam'=>'required'
+        ]);
+        $shift = new Shift();
+        $shift->urutan = $request->input('urutan');
+        $shift->jam = $request->input('jam');
+        $shift->save();
+        return response()->json(['message'=>'Shift ditambah']);
     }
 
     /**
@@ -73,7 +81,11 @@ class ShiftController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $shift = Shift::findOrFail($id);
+        $shift->urutan = $request->input('urutan');
+        $shift->jam = $request->input('jam');
+        $shift->save();
+        return response()->json(['message'=>'Shift diubah']);
     }
 
     /**
@@ -81,6 +93,8 @@ class ShiftController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $shift = Shift::findOrFail($id);
+        $shift->delete();
+        return response()->json(['message'=>'Shift dihapus']);
     }
 }

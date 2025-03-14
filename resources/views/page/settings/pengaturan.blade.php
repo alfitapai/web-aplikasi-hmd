@@ -34,6 +34,26 @@
         </div>
     </div>
 
+    {{-- <div class="row">
+        <div class="col-12 mb-3">
+            <div class="form-floating">
+                <input type="text" name="namashift" id="namaShift" class="form-control" placeholder="Nama Shift">
+                <label for="namaShift">Nama Shift</label>
+            </div>
+        </div>
+        <div class="col-6 mb-3">
+            <div class="form-floating">
+                <input type="time" name="masuk" id="masukShift" class="form-control">
+                <label for="masukShift">Masuk</label>
+            </div>
+        </div>
+        <div class="col-6 mb-3">
+            <div class="form-floating">
+                <input type="time" name="keluar" id="keluarShift" class="form-control">
+                <label for="keluarShift">Keluar</label>
+            </div>
+        </div>
+    </div> --}}
 @endsection
 @section('spengaturan')
     <script src="{{ asset('assets/script/laman/user/pengaturan.js') }}"></script>

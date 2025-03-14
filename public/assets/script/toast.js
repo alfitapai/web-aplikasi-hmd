@@ -9,3 +9,11 @@ const Toast = Swal.mixin({
         toast.onmouseleave = Swal.resumeTimer;
     }
 });
+
+
+const ToastModal = Swal.mixin({
+    toast: true,
+    position: 'center',
+    timer: null,
+    timerProgressBar: false
+});
