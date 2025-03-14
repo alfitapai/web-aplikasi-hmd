@@ -97,6 +97,7 @@
                 @yield('home')
                 @yield('lamanpenjualan')
                 @yield('stok')
+                @yield('absen')
                 @yield('pengaturan')
                 {{-- @yield('penjualan') --}}
             </main>
@@ -142,6 +143,7 @@
     @yield('shome')
     @yield('slamanpenjualan')
     @yield('sstok')
+    @yield('sabsen')
     @yield('spengaturan')
 </body>
 

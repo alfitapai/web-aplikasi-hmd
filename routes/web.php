@@ -24,8 +24,8 @@ Route::get('/home', function () {
 
 Route::get('/penjualan', function () {
     $shift = Shift::all();
-    $pengawas = User::where('role','Pengawas')->get();
-    return view('page.penjualan.penjualan',['pengawas'=>$pengawas,'shift'=>$shift]);
+    $pengawas = User::where('role', 'Pengawas')->get();
+    return view('page.penjualan.penjualan', ['pengawas' => $pengawas, 'shift' => $shift]);
 })->name('lamanpenjualan');
 
 Route::get('/user/setting', function () {
@@ -44,6 +44,9 @@ Route::get('/debug-log', function () {
 Route::post('/masuk', [regisdanloginController::class, 'proslogin'])->name('proslogin');
 Route::post('/regis', [regisdanloginController::class, 'prosdaftar'])->name('prosdaftar');
 Route::get('/logout', [regisdanloginController::class, 'proslogout'])->name('proslogout');
+
+Route::post('/stok-createorupdate', [StokController::class, 'storeOrUpdate'])->name('stok.storeOrUpdate');
+
 
 Route::resource('/shiftList', ShiftController::class);
 Route::resource('/penjualanList', PenjualanController::class);
