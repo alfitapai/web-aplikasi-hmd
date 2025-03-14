@@ -21,8 +21,11 @@
                             <div class="form-floating">
                                 <select name="shift" id="Shift" class="form-select">
                                     <option selected>--Shift--</option>
-                                    <option value="1">1: 00.00WIB - 00.00WIB</option>
-                                    <option value="2">2: 01.00WIB - 01.00WIB</option>
+                                    @foreach ($shift as $jam )
+                                    <option value="{{ $jam->id }}">{{ $jam->urutan }} : {{ $jam->jam }}</option>
+                                    @endforeach
+                                    {{-- <option value="1">1: 00.00WIB - 00.00WIB</option>
+                                    <option value="2">2: 01.00WIB - 01.00WIB</option> --}}
                                 </select>
                                 <label for="Shift">Shift</label>
                             </div>
@@ -36,8 +39,14 @@
                         </div>
                         <div class="col-12 mb-3">
                             <div class="form-floating">
-                                <input type="text" name="pengawas" id="Pengawas" placeholder="Pengawas"
-                                    class="form-control">
+                                <select name="pengawas" id="Pengawas" class="form-select" placeholder="Pengawas">
+                                    <option selected>--Nama Pengawas--</option>
+                                    @foreach ($pengawas as $supervisor )
+                                    <option value="{{ $supervisor->id }}">{{ $supervisor->userid }}</option>
+                                    @endforeach
+                                </select>
+                                {{-- <input type="text" name="pengawas" id="Pengawas" placeholder="Pengawas"
+                                    class="form-control"> --}}
                                 <label for="Pengawas">Pengawas</label>
                             </div>
                         </div>

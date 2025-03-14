@@ -96,6 +96,7 @@
             <main class="content">
                 @yield('home')
                 @yield('lamanpenjualan')
+                @yield('stok')
                 @yield('pengaturan')
                 {{-- @yield('penjualan') --}}
             </main>
@@ -116,6 +117,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ asset('assets/js/formatrupiah.js') }}"></script>
     @if (session('type') && session('title') && session('text'))
         <script>
             Toast.fire({
@@ -139,6 +141,7 @@
     </script>
     @yield('shome')
     @yield('slamanpenjualan')
+    @yield('sstok')
     @yield('spengaturan')
 </body>
 

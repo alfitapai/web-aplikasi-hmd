@@ -36,7 +36,7 @@ The above copyright notice and this permission notice shall be included in all c
             @csrf
             <div class="input-group uf-input-group input-group-lg mb-3">
                 <span class="input-group-text fa fa-user"></span>
-                <input type="text" name="userid" class="form-control" placeholder="user Id" id="userId" value="{{ old('userid') }}">
+                <input type="text" name="userid" class="form-control" placeholder="Nama" id="userId" value="{{ old('userid') }}">
             </div>
             <div class="input-group uf-input-group input-group-lg mb-3">
                 <span class="input-group-text fa fa-envelope"></span>

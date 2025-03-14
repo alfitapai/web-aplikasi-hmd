@@ -13,8 +13,8 @@ class regisdanloginController extends Controller
     public function prosdaftar(Request $request)
     {
         $valid = Validator::make($request->all(), [
-            'userid' => ['required', 'max:12', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{1,12}$/'],
-            // 'userid' => 'required|max:12',
+            // 'userid' => ['required', 'max:12', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{1,12}$/'],
+            'userid' => 'required|max:12',
             // 'name' => 'required|max:80',
             'email' => 'required|email|unique:users|ends_with:gmail.com,mailnator.com',
             'password' => 'required|min:8',
@@ -26,7 +26,7 @@ class regisdanloginController extends Controller
             'min' => ':attribute minimal :min karakter',
             'max' => ':attribute maksimal :max karakter',
             'ends_with' => 'Email Wajib gmail',
-            'regex' => 'Kolom :attribute harus berisi huruf besar, huruf kecil, dan angka maksimal 12 karakter',
+            // 'regex' => 'Kolom :attribute harus berisi huruf besar, huruf kecil, dan angka maksimal 12 karakter',
             // 'confirmed'=> 'Password Tidak Sama',
             'same'=> ':attribute Tidak Sama',
         ],[

@@ -49,7 +49,7 @@
                     class="fa-solid fa-circle-dollar-to-slot me-2"></i>Penjualan</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link link-dark"> <i class="fa-solid fa-warehouse me-2"></i>Stok</a>
+            <a href="{{ route('stok') }}" class="{{ Request::routeIs('stok') ? 'nav-link active' : 'nav-link link-dark'}}"> <i class="fa-solid fa-warehouse me-2"></i>Stok</a>
         </li>
         <hr>
         <li class="nav-item">
