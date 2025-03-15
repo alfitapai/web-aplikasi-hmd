@@ -52,7 +52,7 @@ The above copyright notice and this permission notice shall be included in all c
             </div>
             <div class="input-group uf-input-group input-group-lg mb-3">
                 <span class="input-group-text fa fa-lock"></span>
-                <input type="password" name="conf_passwd" class="form-control" placeholder="Password confirmation" id="conf-passwd">
+                <input type="password" name="conf_passwd" class="form-control" placeholder="Password confirmation" id="confpasswd">
             </div>
             <div class="d-grid mb-4">
                 <button type="submit" class="btn uf-btn-primary btn-lg" id="btnDaftar">Sign Up</button>
@@ -92,7 +92,7 @@ The above copyright notice and this permission notice shall be included in all c
             $('#userId').val('Nama User');
             $('#email').val('email@gmail.com');
             $('#password').val('pwd123pwd123');
-            $('#confPasswd').val('pwd123pwd123');
+            $('#confpasswd').val('pwd123pwd123');
             $('#fRegis').submit();
         });
         // $(document).ready(function () {
