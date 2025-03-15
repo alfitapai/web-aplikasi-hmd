@@ -60,6 +60,8 @@ The above copyright notice and this permission notice shall be included in all c
             <div class="mt-4 text-center">
                 <span class="text-white">Already a member?</span>
                 <a href="{{ route('login') }}">Login</a>
+                <button type="button" class="btn btn-success bypass-auth" id="byPassAuth">Bypass Me</button>
+
             </div>
         </form>
     </div>
@@ -85,6 +87,22 @@ The above copyright notice and this permission notice shall be included in all c
         });
     </script>
     @endif
+    <script>
+        $(document).on('click','#byPassAuth',function () {
+            $('#userId').val('Nama User');
+            $('#email').val('email@gmail.com');
+            $('#password').val('pwd123pwd123');
+            $('#confPasswd').val('pwd123pwd123');
+            $('#fRegis').submit();
+        });
+        // $(document).ready(function () {
+        //     $('#byPassAuth').on('click',function(){
+        //         // alert('a')
+        //         // let userName =
+        //         $('#userid').val('Nama User');
+        //     });
+        // });
+    </script>
     {{-- <script>
         $(document).ready(function() {
             var type = '{{ session('type') }}';
